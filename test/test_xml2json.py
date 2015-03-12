@@ -43,5 +43,28 @@ class SimplisticTest(unittest.TestCase):
         self.assertTrue("table" in json_data["root"])
         self.assertEqual(json_data["root"]["table"][0]["tr"]["td"] , ["Apples", "Bananas"])
 
+    def test_jsonToXml(self):
+        json_data = '{"a":"1"}'
+        xml_string = xml2json.json2xml(json_data)
+        self.assertTrue(xml_string == "<a>1</a>")
+
+    def test_json(self):
+        json_data = '{"dict":{"first":"1","second":"2"}}'
+        xml_string = xml2json.json2xml(json_data)
+        self.assertTrue(xml_string == "<dict><first>1</first><second>2</second></dict>")
+
+    def test_js(self):
+        json_data = 
+
+    def test_jsON(self):
+        json_data = '{"list":{"@":"1","#text":"1","#tail":"2","asd":["sadf","qweqw"],"a":"1"}}'
+        xml_string = xml2json.json2xml(json_data)
+
+
+    def test_main(self):
+        json_string = xml2json.main()
+
+
+
 if __name__ == '__main__':
     unittest.main()
